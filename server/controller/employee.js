@@ -5,7 +5,7 @@ const Employee = require("../DataBase/schema")
 async function addEmployee(req, res) {
     let {
         name,
-        jobTitle,
+       
         phone,
         email,
         address,
@@ -22,7 +22,7 @@ async function addEmployee(req, res) {
     } else {
         await Employee.create({
             name,
-            jobTitle,
+           
             phone,
             email,
             address,
@@ -60,7 +60,7 @@ async function updateEmployee(req, res) {
 
     const updated = await Employee.findByIdAndUpdate(id, {
       name:name,
-      jobTitle:jobTitle,
+     
       phone:phone,
       email:email,
       address:address,

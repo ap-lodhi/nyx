@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Button, Form, Label, Divider, Segment } from "semantic-ui-react";
+import {  Form, Label, Divider,  } from "semantic-ui-react";
 import "./adduser.css"
 const AddUser = () => {
      const [name, setName] = useState("");
-     const [JobTitle, setJobTitle] = useState("");
+     //const [Job, setJob] = useState("");
      const [phone,setPhone] = useState("");
      const [email, setEmail] = useState("");
      const [address, setAddress] = useState("");
 
-     const add = (name, JobTitle, phone, email, address) => {
+     const add = (name,  phone, email, address) => {
 
-        if(name ==="" || JobTitle==="" || email){
-            alert("fiil all the field")
-        }
+        // if(name ==="" || Job==="" || email){
+        //     alert("fiil all the field")
+        // }
         const data = {
           name,
-          JobTitle,
+         
           phone,
           email,
           address,
@@ -59,17 +59,7 @@ const AddUser = () => {
             <Divider />
             <br />
 
-            <Form.Field>
-              <Label pointing="below">Job Title</Label>
-              <input
-                type="text"
-                placeholder="Job Title"
-                value={JobTitle}
-                onChange={(e) => setJobTitle(e.target.value)}
-              />
-            </Form.Field>
-            <Divider />
-            <br />
+            
             <Form.Field>
               <Label pointing="below">Phone No.</Label>
               <input
@@ -110,7 +100,7 @@ const AddUser = () => {
            type="submit"
              
               onClick={() => {
-                add(name, JobTitle, phone, email, address);
+                add(name,  phone, email, address);
               }}
             >
               Add User

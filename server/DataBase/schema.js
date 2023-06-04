@@ -5,7 +5,6 @@ const employeeSchema = mongoose.Schema(
   {
     userId: mongoose.Types.ObjectId,
     name: String,
-    jobTitle: String,
     phone: Number,
     email: String,
     address: String,
