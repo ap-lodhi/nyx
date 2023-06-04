@@ -4,11 +4,11 @@ const mongoose = require("mongoose")
 const employeeSchema = mongoose.Schema(
   {
     userId: mongoose.Types.ObjectId,
-    fullName: String,
+    name: String,
     jobTitle: String,
-    phoneNumber: Number,
+    phone: Number,
     email: String,
-    addresses: String,
+    address: String,
    
   },
   {

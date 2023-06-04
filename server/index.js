@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDb =require("./DataBase/db");
 const { addEmployee, getEmployee, updateEmployee, deleteEmplyoee, } = require("./controller/employee");
-
+const cors = require("cors")
 
 
 
@@ -9,6 +9,7 @@ const { addEmployee, getEmployee, updateEmployee, deleteEmplyoee, } = require(".
 
 const PORT = process.env.PORT || 8000 ;
 const app = express()
+app.use(cors())
 app.use(express.json());
 
 

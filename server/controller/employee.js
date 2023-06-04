@@ -4,11 +4,11 @@ const Employee = require("../DataBase/schema")
 // For Addeing the  Emplyoees
 async function addEmployee(req, res) {
     let {
-        fullName,
+        name,
         jobTitle,
-        phoneNumber,
+        phone,
         email,
-        addresses,
+        address,
        
     } = req.body
 
@@ -21,11 +21,11 @@ async function addEmployee(req, res) {
         })
     } else {
         await Employee.create({
-            fullName,
+            name,
             jobTitle,
-            phoneNumber,
+            phone,
             email,
-            addresses,
+            address,
            
         })
 
@@ -56,22 +56,15 @@ async function getEmployee(req, res) {
 
 async function updateEmployee(req, res) {
     const { id } = req.params;
-    let { fullName,
-        jobTitle,
-        phoneNumber,
-        email,
-        addresses,
-        } = req.body
+    let { name, jobTitle, phone, email, address } = req.body;
 
-    const updated = await Employee.findByIdAndUpdate
-        (id, {
-            fullName: fullName,
-            jobTitle: jobTitle,
-            phoneNumber: phoneNumber,
-            email: email,
-            addresses: addresses,
-            
-        })
+    const updated = await Employee.findByIdAndUpdate(id, {
+      name:name,
+      jobTitle:jobTitle,
+      phone:phone,
+      email:email,
+      address:address,
+    });
     if (!updated) {
         res.status(404).send({
             response: 'err',
