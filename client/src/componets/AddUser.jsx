@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  Form, Label, Divider,  } from "semantic-ui-react";
+import {  Form, Label,  } from "semantic-ui-react";
 import "./adduser.css"
 const AddUser = () => {
      const [name, setName] = useState("");
@@ -48,7 +48,7 @@ const AddUser = () => {
           <h3>Enter user Details </h3>
           <Form>
             <Form.Field>
-              <Label pointing>Full name</Label>
+              <Label pointing="below">Full name</Label>
               <input
                 type="text"
                 placeholder="Full name"
@@ -56,7 +56,6 @@ const AddUser = () => {
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Field>
-            <Divider />
             <br />
 
             
@@ -69,7 +68,7 @@ const AddUser = () => {
                 onChange={(e) => setPhone(e.target.value)}
               />
             </Form.Field>
-            <Divider />
+         
             <br />
             <Form.Field>
               <Label pointing="below">Email</Label>
@@ -80,7 +79,7 @@ const AddUser = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Field>
-            <Divider />
+           
             <br />
             <Form.Field>
               <Label pointing="below">Address</Label>
@@ -91,7 +90,7 @@ const AddUser = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </Form.Field>
-            <Divider />
+         
             
           </Form>
 
@@ -105,10 +104,7 @@ const AddUser = () => {
             >
               Add User
             </button>
-           
-         
-          <br />
-          <br />
+            
         </div>
        
       </div>
