@@ -106,6 +106,7 @@ const getData=()=>{
               ))}
             </tbody>
           </table>
+          <br />
         </div>
       </>
     );

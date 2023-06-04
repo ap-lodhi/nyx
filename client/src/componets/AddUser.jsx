@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import {  Form, Label,  } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
+import { Button, Segment } from "semantic-ui-react";
 import "./adduser.css"
 const AddUser = () => {
      const [name, setName] = useState("");
@@ -7,7 +9,10 @@ const AddUser = () => {
      const [phone,setPhone] = useState("");
      const [email, setEmail] = useState("");
      const [address, setAddress] = useState("");
-
+     const navigate = useNavigate();
+ const handleNavigate = () => {
+   navigate("/user");
+ };
      const add = (name,  phone, email, address) => {
 
         // if(name ==="" || Job==="" || email){
@@ -58,7 +63,6 @@ const AddUser = () => {
             </Form.Field>
             <br />
 
-            
             <Form.Field>
               <Label pointing="below">Phone No.</Label>
               <input
@@ -68,7 +72,7 @@ const AddUser = () => {
                 onChange={(e) => setPhone(e.target.value)}
               />
             </Form.Field>
-         
+
             <br />
             <Form.Field>
               <Label pointing="below">Email</Label>
@@ -79,7 +83,7 @@ const AddUser = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Field>
-           
+
             <br />
             <Form.Field>
               <Label pointing="below">Address</Label>
@@ -90,23 +94,28 @@ const AddUser = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </Form.Field>
-         
-            
           </Form>
 
-         
-            <button className="btn"
-           type="submit"
-             
+          <button
+            className="btn"
+            type="submit"
+            onClick={() => {
+              add(name, phone, email, address);
+            }}
+          >
+            Add User
+          </button>
+          <Segment inverted color="white">
+            <Button
+              inverted
               onClick={() => {
-                add(name,  phone, email, address);
+                handleNavigate();
               }}
             >
-              Add User
-            </button>
-            
+              Go to users
+            </Button>
+          </Segment>
         </div>
-       
       </div>
     </>
   );
