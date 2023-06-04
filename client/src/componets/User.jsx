@@ -1,9 +1,11 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Icon } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 
 const User=()=>{
 const [data, setData] = useState([]);
+const navigate = useNavigate();
 useEffect(() => {
   getData();
 },[]);
@@ -32,6 +34,12 @@ const getData=()=>{
      });
  };
 
+ //update user 
+ const updateUser = (id) => {
+   navigate(`/update/${id}`);
+   getData();
+ };
+
     return (
       <>
         <br />
@@ -45,7 +53,7 @@ const getData=()=>{
             textAlign: "center",
           }}
         >
-          <h1>All The users are here</h1>
+          <h1>All The Users </h1>
           <table
             style={{
               width: "80%",
@@ -84,7 +92,7 @@ const getData=()=>{
                     {el.address}
                   </td>
                   <td>
-                    <button>
+                    <button onClick={() => updateUser(el._id)}>
                       <i class="icon paint brush"></i>
                     </button>
                     <button
