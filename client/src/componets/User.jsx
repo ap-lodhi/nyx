@@ -39,6 +39,9 @@ const getData=()=>{
    navigate(`/update/${id}`);
    getData();
  };
+ const home=()=>{
+    navigate('/')
+ }
 
     return (
       <>
@@ -96,10 +99,13 @@ const getData=()=>{
                       <i class="icon paint brush"></i>
                     </button>
                     <button
-                      style={{ marginLeft: "10px" }}
+                      style={{ marginLeft: "15px" }}
                       onClick={() => deleteUser(el._id)}
                     >
-                      <i class="icon close" color="red"></i>
+                      <i class="icon trash"></i>
+                    </button>
+                    <button style={{ marginLeft: "15px" }} onClick={()=>{home()}}>
+                      <i class="icon home"></i>
                     </button>
                   </td>
                 </tr>

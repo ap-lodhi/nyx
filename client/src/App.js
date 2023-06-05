@@ -7,6 +7,7 @@ import User from './componets/User';
 import UpdateUser from "./componets/UpdateUser";
 
 
+
 function App() {
 
   
@@ -19,6 +20,7 @@ function App() {
 
         <Route path="/update/:id" element={<UpdateUser />}></Route>
       </Routes>
+    
     </>
   );
 }
